@@ -141,6 +141,7 @@ class FlareGiffyDialog extends StatelessWidget {
       cornerRadius: cornerRadius,
       title: title,
       description: description,
+      customWidget: customWidget,
       onlyOkButton: onlyOkButton,
       onlyCancelButton: onlyCancelButton,
       buttonCancelColor: buttonCancelColor,
