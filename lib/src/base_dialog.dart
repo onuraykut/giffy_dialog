@@ -39,6 +39,7 @@ class BaseGiffyDialog extends StatefulWidget {
     @required this.title,
     @required this.onOkButtonPressed,
     @required this.description,
+    @required this.customWidget,
     @required this.onlyOkButton,
     @required this.onlyCancelButton,
     @required this.buttonOkText,
@@ -54,6 +55,7 @@ class BaseGiffyDialog extends StatefulWidget {
   final Widget imageWidget;
   final Text title;
   final Text description;
+  final Widget customWidget;
   final bool onlyOkButton;
   final bool onlyCancelButton;
   final Text buttonOkText;
@@ -129,6 +131,7 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
   Widget _buildPortraitWidget(BuildContext context, Widget imageWidget) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Expanded(
           child: ClipRRect(
@@ -142,14 +145,9 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: widget.title,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: widget.description,
-              ),
+              widget.title,
+              widget.description,
+              widget.customWidget,
               _buildButtonsBar(context)
             ],
           ),
@@ -247,7 +245,7 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
                 0,
               )
             : null,
-        height: MediaQuery.of(context).size.height * 0.6,
+        height: MediaQuery.of(context).size.height * 0.9,
         width: MediaQuery.of(context).size.width * (isPortrait ? 0.8 : 0.6),
         child: Material(
           type: MaterialType.card,

@@ -31,6 +31,7 @@ class AssetGiffyDialog extends StatelessWidget {
     this.onOkButtonPressed,
     this.onCancelButtonPressed,
     this.description,
+    this.customWidget,
     this.onlyOkButton = false,
     this.onlyCancelButton = false,
     this.buttonOkText,
@@ -56,6 +57,9 @@ class AssetGiffyDialog extends StatelessWidget {
 
   /// Description text.
   final Text description;
+
+  /// Add custom widget
+  final Widget customWidget;
 
   /// Sets dialog to have only OK button.
   ///
@@ -123,6 +127,7 @@ class AssetGiffyDialog extends StatelessWidget {
       cornerRadius: cornerRadius,
       title: title,
       description: description,
+      customWidget: customWidget,
       onlyOkButton: onlyOkButton,
       onlyCancelButton: onlyCancelButton,
       buttonCancelColor: buttonCancelColor,

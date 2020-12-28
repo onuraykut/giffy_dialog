@@ -32,6 +32,7 @@ class FlareGiffyDialog extends StatelessWidget {
     this.flareFit = BoxFit.cover,
     this.onCancelButtonPressed,
     this.description,
+    this.customWidget,
     this.onlyOkButton = false,
     this.onlyCancelButton = false,
     this.buttonOkText,
@@ -61,6 +62,9 @@ class FlareGiffyDialog extends StatelessWidget {
 
   /// Description text.
   final Text description;
+
+  /// Add custom widget
+  final Widget customWidget;
 
   /// Sets dialog to have only OK button.
   ///

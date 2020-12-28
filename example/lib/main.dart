@@ -111,20 +111,22 @@ class MyHomePage extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (_) => AssetGiffyDialog(
+                        customWidget: Container(height: 200,width: 200,color: Colors.black,),
                             key: keys[5],
                             image: Image.asset(
                               'assets/men_wearing_jacket.gif',
-                              fit: BoxFit.cover,
+                              fit: BoxFit.scaleDown,
+                              height: 100,
                             ),
                             title: Text(
-                              'Men Wearing Jackets',
+                              '',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
                             entryAnimation: EntryAnimation.BOTTOM_RIGHT,
                             description: Text(
-                              'This is a men wearing jackets dialog box. This library helps you easily create fancy giffy dialog.',
+                              '',
                               textAlign: TextAlign.center,
                               style: TextStyle(),
                             ),
