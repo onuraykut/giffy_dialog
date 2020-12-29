@@ -246,7 +246,7 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
               )
             : null,
         height: MediaQuery.of(context).size.height * 0.9,
-        width: MediaQuery.of(context).size.width * (isPortrait ? 0.8 : 0.6),
+        width: MediaQuery.of(context).size.width * (isPortrait ? 0.9 : 0.8),
         child: Material(
           type: MaterialType.card,
           shape: RoundedRectangleBorder(
